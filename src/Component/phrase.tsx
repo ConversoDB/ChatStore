@@ -1,6 +1,6 @@
 import {Calendar , Circle , Trash} from "lucide-react";
 import type {wordsModel} from "../Models/wordsModel.ts";
-import style from "../styles/phrase.module.css";
+import style from "../Styles/Phrase.module.css"
 import {type Dispatch , type SetStateAction , useState} from "react";
 import {deleteWords} from "../Network/Data_Api.ts";
 import {Modal} from "./Modal.tsx";
