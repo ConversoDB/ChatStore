@@ -1,6 +1,7 @@
 import type {wordsModel} from "../Models/wordsModel.ts";
 
-const api_route = "http://localhost:5000";
+// const api_route = "http://localhost:5000";
+const api_route = "https://botcache.onrender.com";
 
 export const getWords = async (email: string) => {
     const response = await fetch(`${api_route}/api/words/${email}`, {
