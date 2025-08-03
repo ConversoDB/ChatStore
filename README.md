@@ -63,14 +63,14 @@ Prerequisites
    
 1. Clone the Repository
 
-```
+```sh
 https://github.com/ConversoDB/ChatStore.git
 cd ChatStore
 ```
 
 2. Setup Frontend
 
-```
+```sh
 npm install
 npm run dev
 ```
@@ -79,11 +79,24 @@ npm run dev
 ## 🧩Usage
  - **Sign in:**: Use the Clerk sign-in button to authenticate.
  - **Add and manage words:**:
-   -- Search, filter, and mark words as favorites.
-   -- Edit or delete words as needed.
+   - Search, filter, and mark words as favorites.
+   - Edit or delete words as needed.
  - **Explore features:**  
-   -- Filter by category or favorites.
-   -- View synonyms and example sentences.
-   -- See category statistics and word counts.
+   - Filter by category or favorites.
+   - View synonyms and example sentences.
+   - See category statistics and word counts.
    
 ## 📸 Screenshots
+
+ <div display="flex" align="center" class="text-center">
+ 
+  <img width="1552" height="449" alt="Untitled (20)" src="https://github.com/user-attachments/assets/a4001e3d-875f-4ba0-85e5-a77c39fcc4f6" />
+  <br>
+  <video src="https://github.com/user-attachments/assets/c09d0aa8-4ab1-4d3f-a110-52005525ee49"/> 
+
+   
+
+
+
+
+</div>
