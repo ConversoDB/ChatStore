@@ -64,8 +64,8 @@ Prerequisites
 1. Clone the Repository
 
 ```
-https://github.com/ConversoDB/BotCache.git
-cd BotCache
+https://github.com/ConversoDB/ChatStore.git
+cd ChatStore
 ```
 
 2. Setup Frontend
