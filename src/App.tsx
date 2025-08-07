@@ -79,18 +79,40 @@ function App() {
     };
 
     const wordCounts = useMemo(() => {
-        const counts : { [key: string]: number }  = { all: words.length || 0}
 
-        if (!words || !Array.isArray(words)) {
+        if(selectFavourite){
+            const counts : { [key: string]: number }  = { all: favoriteWords.length || 0}
+            if (!favoriteWords || !Array.isArray(favoriteWords)) {
+                return counts;
+            }
+            favoriteWords.forEach(word => {
+                if (!word?.category) return; // Skip if category is undefined
+                counts[word.category] = (counts[word.category] || 0) + 1;
+            });
             return counts;
         }
 
-        words.forEach(word => {
-            if (!word?.category) return; // Skip if category is undefined
-            counts[word.category] = (counts[word.category] || 0) + 1;
-        });
-        return counts;
-    }, [words]);
+        if(phrase){
+            return {all : phraseWords.length || 0}
+        }
+
+        else {
+
+            const counts : { [key: string]: number }  = { all: words.length || 0}
+
+            if (!words || !Array.isArray(words)) {
+                return counts;
+            }
+
+            words.forEach(word => {
+                if (!word?.category) return; // Skip if category is undefined
+                counts[word.category] = (counts[word.category] || 0) + 1;
+            });
+            return counts;
+        }
+
+
+    }, [words, favoriteWords, phrase, selectFavourite, phraseWords]);
 
 
 
@@ -130,7 +152,7 @@ function App() {
                 {isSignedIn &&
                     <>
 
-                        <Header setPhrase={setPhrase} totalWords={words.length} setSelectFavourite={setSelectFavourite}  favoriteWords={favoriteWords} phraseWords={phraseWords}/>
+                        <Header setSelectedCategory={setSelectedCategory} setPhrase={setPhrase} totalWords={words.length} setSelectFavourite={setSelectFavourite}  favoriteWords={favoriteWords} phraseWords={phraseWords}/>
 
                         <div className="space-y-8 mb-12">
                             <SearchBar

@@ -2,12 +2,11 @@
 export function CategoryFilter({ selectedCategory, onCategoryChange , wordCounts } : {selectedCategory : string, onCategoryChange : any , wordCounts : any}) {
 
     const categories: { value: string; label: string }[] = [
-        { value: 'all', label: 'All' },
+        { value: 'all', label: 'all' },
         { value: 'noun', label: 'Nouns' },
         { value: 'verb', label: 'Verbs' },
         { value: 'adjective', label: 'Adjectives' },
         { value: 'adverb', label: 'Adverbs' },
-        { value: 'phrases', label: 'Phrases' },
     ];
 
     return (
@@ -20,7 +19,7 @@ export function CategoryFilter({ selectedCategory, onCategoryChange , wordCounts
                     <button
                         key={category.value}
                         onClick={() => onCategoryChange(category.label)}
-                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
+                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer capitalize ${
                             selectedCategory === category.label
                                 ? 'bg-blue-600 text-white shadow-lg transform scale-105'
                                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:shadow-md'

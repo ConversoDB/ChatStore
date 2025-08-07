@@ -2,7 +2,7 @@ import {BookOpen , LucideInfo , Star} from "lucide-react";
 import type {wordsModel} from "../Models/wordsModel.ts";
 import type {Dispatch , SetStateAction} from "react";
 
-export function Header({totalWords, favoriteWords, setSelectFavourite, setPhrase, phraseWords}: { totalWords: number, favoriteWords?: wordsModel[], phraseWords?: wordsModel[], setSelectFavourite : Dispatch<SetStateAction<boolean>>, setPhrase : Dispatch<SetStateAction<boolean>>  }) {
+export function Header({totalWords, favoriteWords, setSelectFavourite, setPhrase, phraseWords, setSelectedCategory}: { totalWords: number, favoriteWords?: wordsModel[], phraseWords?: wordsModel[], setSelectFavourite : Dispatch<SetStateAction<boolean>>, setPhrase : Dispatch<SetStateAction<boolean>>, setSelectedCategory : Dispatch<SetStateAction<string>>  }) {
 
 
 
@@ -21,6 +21,7 @@ export function Header({totalWords, favoriteWords, setSelectFavourite, setPhrase
                 <button onClick={()=> {
                     setSelectFavourite ( false )
                     setPhrase(false)
+                    setSelectedCategory('all')
                 }} className="cursor-pointer bg-indigo-100 p-2 px-3 rounded-sm flex items-center gap-2">
                     <BookOpen className="h-5 w-5 text-blue-600" />
                     <span className="font-semibold text-gray-900">{totalWords}</span>
@@ -29,6 +30,7 @@ export function Header({totalWords, favoriteWords, setSelectFavourite, setPhrase
                 <button onClick={()=> {
                     setSelectFavourite ( true )
                     setPhrase(false)
+                    setSelectedCategory('all')
                 }}  className="cursor-pointer bg-indigo-100 p-2 px-3 rounded-sm flex items-center gap-2">
                     <Star className="h-5 w-5 text-yellow-500 fill-current" />
                     <span className="font-semibold text-gray-900">{favoriteWords?.length}</span>
@@ -37,10 +39,11 @@ export function Header({totalWords, favoriteWords, setSelectFavourite, setPhrase
                 <button onClick={()=> {
                     setPhrase ( true )
                     setSelectFavourite ( false )
+                    setSelectedCategory('all')
                 }}  className="cursor-pointer bg-indigo-100 p-2 px-3 rounded-sm flex items-center gap-2">
                     <LucideInfo  className="h-5 w-5 text-yellow-500 fill-current" />
                     <span className="font-semibold text-gray-900">{phraseWords?.length}</span>
-                    <span className="text-gray-600">Phrase</span>
+                    <span className="text-gray-600">Topics</span>
                 </button>
             </div>
         </div>
